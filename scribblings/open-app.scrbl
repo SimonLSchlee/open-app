@@ -1,10 +1,11 @@
 #lang scribble/manual
-@require[@for-label[open-app
-                    racket/system
-                    racket/base]]
 
-@title{open-app: Open app for a file or url}
-@author{(author+email @"Simon Lukas Schlee" @"schlee.simon@gmail.com")}
+@(require (for-label open-app
+                     racket/system
+                     racket/base))
+
+@title{open-app}
+@author[(author+email "Simon Lukas Schlee" "schlee.simon@gmail.com")]
 
 @defmodule[open-app]
 
