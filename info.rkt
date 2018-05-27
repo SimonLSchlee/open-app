@@ -5,3 +5,4 @@
 (define scribblings '(("scribblings/open-app.scrbl" ())))
 (define pkg-desc "Open-app is a utility for opening a file or url with the default application.")
 (define version "0.1")
+(define pkg-authors '("schlee.simon@gmail.com"))
