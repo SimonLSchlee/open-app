@@ -18,8 +18,8 @@
 
 (module+ test
   (require rackunit)
-  (check-true (open-app "http://racket-lang.org") "Could not open url")
-  (check-true (open-app ".")) "Could not open directory")
+  (check-not-exn (lambda () (open-app "http://racket-lang.org")) "Could not open url")
+  (check-not-exn (lambda () (open-app ".")) "Could not open directory"))
 
 (define/contract (open-program/unix target)
   (-> target? boolean?)
