@@ -23,13 +23,17 @@
 
 (define/contract (open-program/unix target)
   (-> target? boolean?)
-  (system* (find-executable-path "xdg-open")
-           target))
+  (open-with "xdg-open" target))
 
 (define/contract (open-program/macosx target)
   (-> target? boolean?)
-  (system* (find-executable-path "open")
-           target))
+  (open-with "open" target))
+
+(define (open-with command target)
+  (define path (find-executable-path command))
+  (if path
+      (system* path target)
+      #f))
 
 (define/contract (open-program/windows target)
   (-> target? boolean?)
